@@ -1,50 +1,48 @@
 version: 1
-applications:
-  - frontend:
-      phases:
-        preBuild:
-          commands:
-            - echo "Starting build process..."
-            - npm install
-        build:
-          commands:
-            - echo "No build step needed for static HTML"
-            - echo "Project is ready to deploy"
-        postBuild:
-          commands:
-            - echo "Build completed successfully!"
-      artifacts:
-        baseDirectory: .
-        files:
-          - '**/*'
-        exclude:
-          - node_modules/**/*
-          - .git/**/*
-          - .gitignore
-          - README.md
-          - amplify.yml
-      cache:
-        paths:
-          - node_modules/**/*
-      customHeaders:
-        - pattern: '**/*.css'
-          headers:
-            - key: 'Cache-Control'
-              value: 'public, max-age=31536000'
-        - pattern: '**/*.js'
-          headers:
-            - key: 'Cache-Control'
-              value: 'public, max-age=31536000'
-        - pattern: '**/*.{png,jpg,jpeg,gif,webp,svg,ico}'
-          headers:
-            - key: 'Cache-Control'
-              value: 'public, max-age=31536000'
-        - pattern: '**/*.html'
-          headers:
-            - key: 'Cache-Control'
-              value: 'public, max-age=0, must-revalidate'
-            - key: 'X-Frame-Options'
-              value: 'DENY'
-            - key: 'X-XSS-Protection'
-              value: '1; mode=block'
-    appRoot: /
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Starting build process..."
+        - npm install
+    build:
+      commands:
+        - echo "No build step needed for static HTML"
+        - echo "Project is ready to deploy"
+    postBuild:
+      commands:
+        - echo "Build completed successfully!"
+  artifacts:
+    baseDirectory: .
+    files:
+      - '**/*'
+    exclude:
+      - node_modules/**/*
+      - .git/**/*
+      - .gitignore
+      - README.md
+      - amplify.yml
+  cache:
+    paths:
+      - node_modules/**/*
+  customHeaders:
+    - pattern: '**/*.css'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000'
+    - pattern: '**/*.js'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000'
+    - pattern: '**/*.{png,jpg,jpeg,gif,webp,svg,ico}'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=31536000'
+    - pattern: '**/*.html'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=0, must-revalidate'
+        - key: 'X-Frame-Options'
+          value: 'DENY'
+        - key: 'X-XSS-Protection'
+          value: '1; mode=block'
