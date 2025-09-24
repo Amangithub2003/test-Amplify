@@ -15,6 +15,10 @@
         "name": "Azure",
         "icon": "https://img.icons8.com/?size=100&id=VLKafOkk3sBX&format=png&color=000000"
     },
+        {
+        "name": "GCP",
+        "icon": "https://img.icons8.com/?size=100&id=WHRLQdbEXQ16&format=png&color=000000"
+    },
     {
         "name": "Jenkins",
         "icon": "https://img.icons8.com/?size=100&id=39292&format=png&color=000000"
@@ -36,10 +40,6 @@
         "icon": "https://img.icons8.com/?size=100&id=oROcPah5ues6&format=png&color=000000"
     },
     {
-        "name": "Java",
-        "icon": "https://img.icons8.com/?size=100&id=13679&format=png&color=000000"
-    },
-    {
         "name": "Python",
         "icon": "https://img.icons8.com/?size=100&id=13441&format=png&color=000000"
     },
@@ -52,16 +52,27 @@
         "icon": "https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
     },
     {
-        "name": "JavaScript",
-        "icon": "https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
-    },
-    {
         "name": "Git VCS",
         "icon": "https://img.icons8.com/?size=100&id=20906&format=png&color=000000"
     },
     {
         "name": "GitHub",
         "icon": "https://img.icons8.com/?size=100&id=63777&format=png&color=000000"
+    },
+    {
+        "name": "Prometheus",
+        "icon": "https://img.icons8.com/?size=100&id=12345&format=png&color=000000"
+    },
+    {
+        "name": "Grafana",
+        "icon": "https://img.icons8.com/?size=100&id=9uVrNMu3Zx1K&format=png&color=000000"
+    },
+    {
+        "name": "Nagios",
+        "icon": "https://img.icons8.com/?size=100&id=33445&format=png&color=000000"
+    },
+    {
+        "name": "ELK Stack",
+        "icon": "https://img.icons8.com/?size=100&id=55678&format=png&color=000000"
     }
-      
 ]

@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+build/
+dist/
+aws-exports.js
+.secret-*

@@ -102,7 +102,7 @@
         </div>
         
         <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1ibpjxYuZ_38ygaXuG5Fof7sK-gPyRwBU/view?usp=sharing" target="_blank" class="btn"><span>Resume</span>
+            <a href="https://drive.google.com/file/d/12dlddfw6-y4F018mMqwK4mQ76Cm6lrt8/view?usp=sharing" target="_blank" class="btn"><span>Resume</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
         </div>
@@ -149,7 +149,7 @@
         <div class="content">
         <h3>Bachelor of Engineering in CSE[Data science]</h3>
         <p>DPG Institute of Technology and Management, Gurgaon | MDU, Rohtak </p>
-        <h4>2022-2025 | Pursuing</h4>
+        <h4>2022-2025 | Completed</h4>
         </div>
     </div>
 
@@ -210,14 +210,26 @@
 
   <div class="timeline">
 
+        <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Cloud Trainee</h2>
+        </div>
+        <div class="desc">
+            <h3>At CacheDigitech pvt ltd, New Delhi </h3>
+            <p>July 2025 - Now</p>
+        </div>
+      </div>
+    </div>
+
     <div class="container right">
       <div class="content">
         <div class="tag">
-          <h2>DevOps Engineer</h2>
+          <h2>Tech Support</h2>
         </div>
         <div class="desc">
-            <h3>At Qspiders</h3>
-            <p>Feb 2025 - May 2025</p>
+            <h3>At DDA(Delhi Development Authority), New Delhi </h3>
+            <p>Jan 2025 - Jun 2025</p>
         </div>
       </div>
     </div>
@@ -228,7 +240,7 @@
           <h2>Cloud Engineer</h2>
         </div>
         <div class="desc">
-            <h3>At InternsElite.net</h3>
+            <h3>At InternsElite.net, Remote</h3>
             <p>Jun 2024 - Aug 2024</p>
         </div>
       </div>
@@ -240,7 +252,7 @@
           <h2>Cyber security [Malware Analyst]</h2>
         </div>
         <div class="desc">
-            <h3>At Employability.life</h3>
+            <h3>At Employability.life, New Delhi </h3>
             <p>Jan 2024 - Apr 2024</p>
         </div>
       </div>
@@ -252,7 +264,7 @@
           <h2>Full-Stack Developer</h2>
         </div>
         <div class="desc">
-            <h3>At NullClass</h3>
+            <h3>At NullClass, Remote </h3>
             <p>Jun 2023 - Aug 2023</p>
         </div>
       </div>
@@ -279,11 +291,66 @@
       <div class="image-box">
         <img draggable="false" src="./assets/images/contact1.png" alt="">
       </div>
-    <form id="contact-form">
-      
+  
+<form id="contact-form" method="POST" action="http://127.0.0.1:3000/contact">
+  <div class="form-group">
+    <div class="field">
+      <input type="text" name="name" placeholder="Name" required />
+      <i class='fas fa-user'></i>
+    </div>
+    <div class="field">
+      <input type="email" name="email" placeholder="Email" required />
+      <i class='fas fa-envelope'></i>
+    </div>
+    <div class="field">
+      <input type="text" name="phone" placeholder="Phone" />
+      <i class='fas fa-phone-alt'></i>
+    </div>
+    <div class="message">
+      <textarea name="message" placeholder="Message" required></textarea>
+      <i class="fas fa-comment-dots"></i>
+    </div>
+  </div>
+  <div class="button-area">
+    <button type="submit">Submit <i class="fa fa-paper-plane"></i></button>
+  </div>
+</form>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert(result.message);
+    } else {
+      alert(result.message || "Form Submission Failed! Try Again");
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    alert("Server Error: Could not submit form.");
+  }
+});
+</script>
+
+    <!-- <form id="contact-form">
+      action= https://formspree.io/f/mwpbgqdr
       <div class="form-group">
         <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Nme" required>
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
@@ -303,7 +370,7 @@
         <button type="submit">
           Submit <i class="fa fa-paper-plane"></i></button>
       </div>
-    </form>
+    </form> -->
   </div>
   </div>
 </section>
@@ -380,8 +447,9 @@
     ></script>
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+<script src="assets/js/script.js"></script>
 
-<script src="./assets/js/script.js"></script>
+<!-- <script src="./assets/js/script.js"></script> -->
 
 </body>
 </html>

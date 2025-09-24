@@ -34,7 +34,7 @@ $(document).ready(function () {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+        },500, 'linear')
     });
 
     // <!-- emailjs to mail contact form data -->
@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Cloud Engineering", "Devops Engineering", "web development"],
+    strings: ["Cloud Engineering", "Devops Engineering", "Cyber Security"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
